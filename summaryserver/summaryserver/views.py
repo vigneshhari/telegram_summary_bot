@@ -88,7 +88,11 @@ def webhook(request):
         bot.sendMessage(chat_id, "Welcome to Search Summariser (v0.0.1 Alpha).")
         bot.sendMessage(chat_id, "Enter Query to Return Summarised Results.")
         return JsonResponse({})
-    out =  "." + search(message)["content"]
+    out =  search(message)["content"]
+    if(len(out.strip()) == 0):
+        bot.sendMessage(chat_id, "Sorry we could not find results for the given query.")
+        bot.sendMessage(chat_id, "Enter Query to Return Summarised Results.")
+        return JsonResponse({})
     lim = 4095
     for i in range((len(out) // lim) ):
         bot.sendMessage(chat_id, out[(i*lim) : ((i+1) * lim)] )
