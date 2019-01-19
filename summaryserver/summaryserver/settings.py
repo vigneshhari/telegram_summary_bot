@@ -25,7 +25,7 @@ SECRET_KEY = '8!%)*(x&q81h^@y$$=f!4q38^(f&$y4txw2@=qn^@7lg99-$^$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost" , "127.0.0.0" , "summarybot2019.herokuapp.com"]
+ALLOWED_HOSTS = ["*"] #"localhost" , "127.0.0.0" , "summarybot2019.herokuapp.com"]
 
 
 # Application definition
