@@ -84,6 +84,10 @@ def webhook(request):
     chat_id = received_json_data["message"]["from"]["id"]
     message = received_json_data["message"]["text"]
     bot = telepot.Bot(os.environ.get('BOT_TOKEN'))
+    if(message == "/start"):
+        bot.sendMessage(chat_id, "Welcome to Search Summariser (v0.0.1 Alpha).")
+        bot.sendMessage(chat_id, "Enter Query to Return Summarised Results.")
+        return JsonResponse({})
     out =  "." + search(message)["content"]
     lim = 4095
     for i in range((len(out) // lim) ):
