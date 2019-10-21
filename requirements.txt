@@ -12,7 +12,7 @@ idna==2.7
 idna-ssl==1.1.0
 lxml==4.3.0
 multidict==4.3.1
-nltk==3.4
+nltk==3.4.5
 numpy==1.16.0
 pytz==2018.9
 requests==2.21.0
